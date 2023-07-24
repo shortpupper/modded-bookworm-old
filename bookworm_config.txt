@@ -1,0 +1,26 @@
+//game config options
+
+//turn on the zone api
+
+&zone_api=false&
+
+//link to deluxe download
+
+&deluxelink=javascript:window.parent.location = "https://arcadethunder.com/word-games/bookworm";
+
+&BWAlink=https://arcadethunder.com/word-games/bookworm
+
+
+&configloaded=true&
+
+//game config options
+
+//game cheat options
+
+&cheat_neverdie=true&
+&cheat_allmatch=true&
+
+
+//all loaded - this config info must be present
+
+&configloaded=true&

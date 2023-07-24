@@ -1,0 +1,108 @@
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+
+		<title>Bookme Files</title>
+
+		<link rel="canonical" href="https://www.solitaireparadise.com/games_list/bookworm.html" />
+
+		<style> 
+			body {
+				margin: 0; padding: 0; background: #2b211d;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 100%;
+				overflow: hidden;
+			}
+			#game{
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="game"></div>
+		<script>
+		  (function () {
+		  	function setGamesize() {
+		  		var windowW = window.innerWidth;
+			    var windowH = window.innerHeight;
+			    var gameW = 674;
+			    var gameH = 512;
+
+			    var newW = windowW;
+			    var newH = gameH / gameW * windowW;
+			    if(newH > windowH) {
+			    	newH = windowH;
+			    	newW = gameW / gameH * windowH
+			    }
+
+			    const el = document.getElementById('game');
+			    el.style.height = newH + 'px';
+			    el.style.width = newW + 'px';
+		  	}
+		  	setGamesize();
+			console.log("setGame");
+		    window.addEventListener("resize", setGamesize);
+		  })();
+		</script>
+		<script>
+			window.RufflePlayer = window.RufflePlayer || {};
+			window.RufflePlayer.config = {
+				"autoplay": "auto",
+				"backgroundColor": "#2b211d",
+				"letterbox": "fullscreen",
+				"contextMenu": false,
+				"publicPath": "",
+				// Options affecting the whole page
+				"polyfills": true,
+
+				// Options affecting files only
+				"allowScriptAccess": false,
+				"unmuteOverlay": "visible",
+				"wmode": "window",
+				"warnOnUnsupportedContent": true,
+				"showSwfDownload": false,
+				"upgradeToHttps": window.location.protocol === "https:",
+				"maxExecutionDuration": 15,
+				"logLevel": "debug",
+				"base": null,
+				"menu": true,
+				"salign": "",
+				"forceAlign": false,
+				"scale": "showAll",
+				"forceScale": false,
+				"frameRate": 1,
+				"quality": "high",
+				"splashScreen": true,
+				"preferredRenderer": null,
+				"openUrlMode": "allow",
+				"allowNetworking": "all",
+				"favorFlash": true,
+			};
+			window.addEventListener("load", (event) => {
+				const ruffle = window.RufflePlayer.newest();
+				const player = ruffle.createPlayer();
+				const container = document.getElementById("game");
+				container.appendChild(player);
+				player.load("./bookworm.swf");
+				player.setAttribute("style","height:100%; width:100%");
+			});
+		</script>
+		<script defer src="../../js/ruffle/ruffle.js"></script>
+
+		<script>
+      var spGameInfo = {
+        name: 'Bookworm',
+        slug: 'bookworm',
+        url: 'https://www.solitaireparadise.com/games_list/bookworm.html',
+        img: 'https://www.solitaireparadise.com/static/game-images/bookworm-175x150.png'
+      }
+    </script>
+    <script src="https://www.solitaireparadise.com/static/js/hotlink.js"></script>
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e55135b6925fdc9","token":"ed945eaa5a624178af649225281c94ec","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
