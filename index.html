@@ -26,11 +26,16 @@
 	<body>
 		<div id="game"></div>
 		<script>
+			function consoleLog(message) {
+				console.log(message);
+			};
+		</script>
+		<script>
 		  (function () {
 		  	function setGamesize() {
 		  		var windowW = window.innerWidth;
 			    var windowH = window.innerHeight;
-			    var gameW = 674;
+			    var gameW = 974;
 			    var gameH = 512;
 
 			    var newW = windowW;
@@ -92,17 +97,17 @@
 				player.setAttribute("style","height:100%; width:100%");
 			});
 		</script>
-		<script defer src="../../js/ruffle/ruffle.js"></script>
+		<script defer src="js/ruffle/ruffle.js"></script>
 
 		<script>
       var spGameInfo = {
         name: 'Bookworm',
         slug: 'bookworm',
-        url: 'https://www.solitaireparadise.com/games_list/bookworm.html',
-        img: 'https://www.solitaireparadise.com/static/game-images/bookworm-175x150.png'
-      }
+        url: '',
+        img: ''
+      };
     </script>
-    <script src="https://www.solitaireparadise.com/static/js/hotlink.js"></script>
+    <script src="js/hotlink.js"></script>
 	<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7e55135b6925fdc9","token":"ed945eaa5a624178af649225281c94ec","version":"2023.4.0","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>
