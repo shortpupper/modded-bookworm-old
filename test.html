@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>High Scores</title>
+</head>
+<body>
+    <script>
+        // Save data to Local Storage
+        function saveData(highScores) {
+            localStorage.setItem("highScores", JSON.stringify(highScores));
+        }
+
+        // Retrieve data from Local Storage
+        function getHighScores() {
+            var scores = localStorage.getItem("highScores");
+            return scores ? JSON.parse(scores) : {};
+        }
+
+        // Add a new person to the high scores
+        function addPerson(name, score, wordCount) {
+            var highScores = getHighScores();
+            if (!highScores[name]) {
+                highScores[name] = [{ score: score, wordCount: wordCount }];
+            } else {
+                highScores[name].push({ score: score, wordCount: wordCount });
+            }
+            saveData(highScores);
+        }
+
+        // Example usage
+        addPerson("John", 100, 1234);
+        addPerson("Sarah", 150, 2000);
+        addPerson("John", 200, 3000); // Add another John
+
+        var retrievedScores = getHighScores();
+        for (var name in retrievedScores) {
+            console.log(name + "'s High Scores:");
+            for (var i = 0; i < retrievedScores[name].length; i++) {
+                console.log("Score: " + retrievedScores[name][i].score + " (Word Count: " + retrievedScores[name][i].wordCount + ")");
+            }
+        }
+    </script>
+</body>
+</html>
